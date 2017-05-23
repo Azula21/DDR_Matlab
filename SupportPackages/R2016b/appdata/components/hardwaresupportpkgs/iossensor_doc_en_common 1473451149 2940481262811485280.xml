@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<componentData>
+  <component>
+    <componentBaseName>hardwaresupportpkgs/iossensor_doc_en</componentBaseName>
+    <componentFileName>hardwaresupportpkgs/iossensor_doc_en_common_1473451149.zip</componentFileName>
+    <componentName>hardwaresupportpkgs/iossensor_doc_en_common</componentName>
+    <componentVersion>1473451149</componentVersion>
+    <instrset>0</instrset>
+    <locale />
+    <locationId>1</locationId>
+    <numFiles>1061</numFiles>
+    <platformList>
+      <platform>glnxa64</platform>
+      <platform>maci64</platform>
+      <platform>win64</platform>
+    </platformList>
+    <releaseFamily>R2016b</releaseFamily>
+    <size>2913524</size>
+    <type />
+    <uncompressedBytes>5630125</uncompressedBytes>
+  </component>
+</componentData>
+

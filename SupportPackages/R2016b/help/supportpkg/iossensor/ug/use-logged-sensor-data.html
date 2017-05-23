@@ -1,0 +1,245 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Use Logged Sensor Data</title>
+<link rel="stylesheet" href="docstyle.css" type="text/css"><link href="../includes/product/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="toctype" itemprop="pagetype" content="ug">
+<meta name="infotype" itemprop="infotype" content="ex" />
+
+<meta name="description" itemprop="description" content="You can use the logged sensor data either during or after acquisition for plotting and other analyses." />
+<script type="text/javascript" src="../includes/product/scripts/jquery/jquery-latest.js"></script>
+<link href="../includes/product/css/site6.css?201609091557" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/site6_lg.css?201609091557" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link href="../includes/product/css/site6_md.css?201609091557" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link href="../includes/product/css/site6_sm+xs.css?201609091557" rel="stylesheet" media="screen and (max-width: 991px)">
+<link href="../includes/product/css/site6_sm.css?201609091557" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link href="../includes/product/css/site6_xs.css?201609091557" rel="stylesheet" media="screen and (max-width: 767px)">
+<link href="../includes/product/css/site6_offcanvas.css?201609091557" rel="stylesheet" type="text/css">
+
+<script src="../includes/shared/scripts/l10n.js"></script>
+<script src="../includes/shared/scripts/docscripts.js"></script>
+<script src="../includes/shared/scripts/f1help.js"></script>
+<script src="../includes/product/scripts/docscripts.js"></script>
+<script src="../includes/shared/scripts/mw.imageanimation.js"></script>
+<script src="../includes/shared/scripts/jquery.highlight.js"></script>
+<script src="../includes/product/scripts/underscore-min.js"></script>
+<script src="../includes/product/scripts/examples.js"></script>
+<script src="../includes/product/scripts/suggest.js"></script>
+
+
+
+
+
+<script src="../includes/product/scripts/jquery/jquery.mobile.custom.min.js"></script>
+<script src="../includes/product/scripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="../includes/product/scripts/global.js"></script>
+<link href="../includes/product/css/doc_center.css" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/doc_center_installed.css" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/doc_center_print.css" rel="stylesheet" type="text/css" media="print">
+<script type="text/javascript" src="../includes/shared/equationrenderer/release/MathRenderer.js"></script>
+</head>
+<body id="responsive_offcanvas">
+<div id="doc_header_spacer" class="header"></div>
+<div class="sticky_header_container includes_subnav">
+<div class="section_header level_3">
+<div class="container-fluid">
+<div class="row" id="mobile_search_row">
+<div class="col-xs-12 col-sm-6 col-sm-push-6 col-md-5 col-md-push-7" id="mobile_search">
+<div class="search_nested_content_container">
+<form id="docsearch_form" name="docsearch_form" method="get" data-release="R2016b" data-language="en" action="../../../templates/searchresults.html">
+<div class="input-group tokenized_search_field">
+<label class="sr-only">Search Help</label>
+<input type="text" class="form-control conjoined_search" autocomplete="off" name="qdoc" placeholder="Search Help" id="docsearch">
+<div class="input-group-btn">
+<button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button>
+</div>
+</div>
+</form>
+</div>
+<button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div>
+<div class="col-sm-6 col-sm-pull-6 col-md-7 col-md-pull-5" id="section_header_title">
+<div class="section_header_content">
+<div class="section_header_title">
+<h1><a href="../../../documentation-center.html">Documentation</a></h1>
+</div>
+</div>
+</div>
+<div class="visible-xs" id="search_actuator">
+<button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button>
+</div>
+</div><!--END.CLASS row-->
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS section_header level_3-->
+<div class="horizontal_nav">
+<div class="horizontal_nav_container">
+<div class="offcanvas_actuator" data-toggle="offcanvas" data-target="#sidebar" id="nav_toggle">
+<button type="button" class="btn"><span class="sr-only">Toggle navigation</span><span class="icon-menu icon_24"></span></button>
+<span class="offcanvas_actuator_label"></span><span class="offcanvas_actuator_close"></span>
+</div>
+<div class="offcanvas_horizontal_nav">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12 hidden-xs hidden-sm"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS sticky_header_container-->
+<div class="row-offcanvas row-offcanvas-left">
+<div class="sidebar-offcanvas" id="sidebar" role="navigation">
+<nav class="offcanvas_nav" role="navigation">
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_breadcrumb">
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../../../documentation-center.html" itemprop="url"><span itemprop="title">Documentation Home</span></a></li>
+</ul>
+
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_disambiguation">
+<li class="product"><a href="../index.html">MATLAB Support Package for Apple iOS Sensors</a>
+<div class="dropdown">
+<span class="icon-arrow-down icon_16" id="dropdownMenu1" data-toggle="dropdown"></span>
+<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../examples.html?s_cid=doc_flyout">Examples</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../functionlist.html?s_cid=doc_flyout">Functions</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../release-notes.html?s_cid=doc_flyout">Release Notes</a></li>
+</ul>
+</div>
+</li>
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../apple-ios-sensors-data-acquisition.html" itemprop="url"><span itemprop="title">Apple iOS Sensors Data Acquisition</span></a></li>
+</ul>
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_scrollspy nav">
+<li class="nav_scrollspy_function"><a href="#responsive_offcanvas">Use Logged Sensor Data</a></li>
+</ul>
+</nav>
+<script src="../includes/product/scripts/offcanvas.js"></script></div><!--END.CLASS sidebar-offcanvas-->
+<div class="content_container" id="content_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+
+<section id="doc_center_content" lang="en"><div id="pgtype-topic">
+<span id="buy0m1d" class="anchor_target"></span><h2 class="title r2016b" itemprop="title content" id="buy0m1d">Use Logged Sensor Data</h2><div class="clearfix"></div><div itemprop="content"><p>This example shows how to plot orientation data. You can use
+the logged sensor data either during or after acquisition for plotting
+and other analyses.</p></div><div class="clearfix"></div><div itemprop="content"><p>This example assumes that you have already installed and set
+up <span>MATLAB<sup>&#x00AE;</sup> Mobile&#x2122;</span> on your iOS device and connected it to your computer
+running MATLAB or to the MathWorks Cloud. For information about
+these steps, see <a href="get-started-with-apple-ios-sensors.html">Get Started with iOS Sensors</a>.</p></div><div class="clearfix"></div><div itemprop="content"><ol type="1"><li><p>Start <span>MATLAB Mobile</span> on your iOS device.</p></li><li><p>On the <b>Sensors</b> screen, tap the
+Orientation sensor.</p></li><li><p>Place the device where you want it for sending the
+sensor data.</p></li><li><p>On your computer, in MATLAB, connect to the device.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>connector <span style="color:#A020F0">on</span></pre></div></div></div><p>Alternatively, if you are running MATLAB using MathWorks Cloud,
+log in to the Cloud.</p></li><li><p>In MATLAB, create a <code>mobiledev</code> object, <code>m</code>.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>m = mobiledev</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>mobiledev with properties:
+
+                   Connected: 1
+                     Logging: 0
+            InitialTimestamp: ''
+
+   AccelerationSensorEnabled: 0
+AngularVelocitySensorEnabled: 0
+  MagneticFieldSensorEnabled: 0
+    OrientationSensorEnabled: 1
+       PositionSensorEnabled: 0
+                                                                
+Supported functions</pre></div></div></div><p>In the display that is shown when you create the object, a value
+of <code>1</code> means enabled or on, and <code>0</code> means
+not enabled or off. In this example, you can see that the device and
+computer are connected, and data is not being logged yet. The Orientation
+sensor is shown as enabled since you selected it on the device.</p></li><li><p>Begin logging data from the selected sensor by enabling
+the <code>Logging</code> property.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>m.Logging = 1</pre></div></div></div><p>This action starts the transmitting of data from all selected
+sensors. You can also start transmission by tapping the <b>Start
+Sending</b> button in <span>MATLAB Mobile</span>.</p></li><li><p>You can see a display of the object properties any
+time, using the <code>disp</code> function. Now that you have
+started logging data, the display shows more information.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>disp(m)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>mobiledev with properties:
+
+                   Connected: 1
+                     Logging: 1
+            InitialTimestamp: '06-08-2014 13:45:56.529'
+
+   AccelerationSensorEnabled: 0
+AngularVelocitySensorEnabled: 0
+  MagneticFieldSensorEnabled: 0
+    OrientationSensorEnabled: 1
+       PositionSensorEnabled: 0
+
+Current Sensor Values:
+                Acceleration: [0x3 double]  (m/s^2)
+             AngularVelocity: [0x3 double]  (rad/s)
+               MagneticField: [0x3 double]  (microtesla)
+                 Orientation: [1.8102 0.0101 -0.0418]  (degrees)
+
+       Position Data: 
+                    Latitude: [0x1 double]  (degrees)
+                   Longitude: [0x1 double]  (degrees)
+                       Speed: [0x1 double]  (m/s)
+                      Course: [0x1 double]  (degrees)
+                    Altitude: [0x1 double]  (m)
+          HorizontalAccuracy: [0x1 double]  (m)
+                                                                 
+Supported functions</pre></div></div></div><p>In the display, you can see that the device and computer are
+connected, and data is being logged. The <code>InitialTimestamp</code> value
+shows the timestamp when the first packet of data was logged. The
+sensor values are displayed, indicating the current measurement value.</p></li><li><p>After you have collected the amount of data you need,
+stop logging sensor data.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>m.Logging = 0</pre></div></div></div></li><li><p>You can see the entire log of all readings using the
+log functions. You can use these functions while you are still logging
+or after you stop. Each sensor type has a log function:</p><p><code>accellog</code> &#8212; Logged acceleration data</p><p><code>angvellog</code> &#8212; Logged angular velocity
+data</p><p><code>magfieldlog</code> &#8212; Logged magnetic field
+data</p><p><code>orientlog</code> &#8212; Logged orientation data</p><p><code>poslog</code> &#8212; Logged position data, including
+data points for latitude, longitude, speed, course, altitude, and
+horizontal accuracy.</p><p>See <a href="acquire-sensor-data.html#buy0l93">Device Orientation</a> for a diagram showing the <code>X</code>, <code>Y</code>,
+and <code>Z</code> axes relative to the device.</p><p>To get the logged orientation data from object <code>m</code>,
+assign the variable <code>o</code> for the logged orientation
+data and <code>t</code> for the timestamps.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>[o, t] = orientlog(m);</pre></div></div></div><p>You can then plot the data.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>plot(t, o) </pre></div></div></div><p class="listimage">
+<img src="or_plotv2.gif" height="515" width="575" alt=""></p><p>In this example, the Orientation data is from the device being
+moved a short distance for a few minutes. The plot shows the time
+(<code>t</code>) against orientation (<code>o</code>).</p></li><li><p>You can keep the logs to access the data again, or
+discard them from your MATLAB session:</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>discardlogs(m)</pre></div></div></div></li><li><p>When you are done with the session, delete the object.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>clear <span style="color:#A020F0">m</span></pre></div></div></div></li><li><p>Close the connection between MATLAB and the iOS device.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>connector <span style="color:#A020F0">off</span></pre></div></div></div></li></ol></div>
+</div></section>
+
+<div class="clearfix"></div>
+<div class="feedbackblock">Was this topic helpful?
+<input type="button" value="Yes" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-YES-R2016b');">
+<input type="button" value="No" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-NO-R2016b');">
+</div>
+<!--Last updated: Fri Sep  9 15:57:25 EDT 2016-->
+</div>
+</div>
+</div><!--close_0960-->
+</div><!--close_0970-->
+<div class="body_trail_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+<div class="row"><div class="col-xs-12 col-sm-3"><h5><a href="../index.html?s_cid=doc_ftr">MATLAB Support Package for Apple iOS Sensors Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="../examples.html?s_cid=doc_ftr">Examples</a></li>
+<li><a href="../functionlist.html?s_cid=doc_ftr">Functions</a></li>
+<li><a href="../release-notes.html?s_cid=doc_ftr">Release Notes</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="../../../documentation-center.html?s_cid=doc_ftr">Other Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="../../../matlab/index.html?s_cid=doc_ftr">MATLAB</a></li><li><span class="missinglink"></span></li><li><a href="../../../supportpkg/android/index.html?s_cid=doc_ftr">Simulink Support Package for Android Devices</a></li><li><a href="../../../supportpkg/usbwebcams/index.html?s_cid=doc_ftr">MATLAB Support Package for USB Webcams</a></li><li><a href="../../../supportpkg/arduinoio/index.html?s_cid=doc_ftr">MATLAB Support Package for Arduino Hardware</a></li><li><a href="../../../documentation-center.html?s_cid=doc_ftr">Documentation Home</a></li></ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="http://www.mathworks.com/support/?s_cid=doc_ftr">Support</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="http://www.mathworks.com/matlabcentral/answers/index?s_cid=doc_ftr">MATLAB Answers</a></li><li><a href="http://www.mathworks.com/support/install-matlab.html?s_cid=doc_ftr">Installation Help</a></li><li><a href="http://www.mathworks.com/support/bugreports/?s_cid=doc_ftr">Bug Reports</a></li><li><a href="http://www.mathworks.com/products/availability/?s_cid=doc_ftr">Product Requirements</a></li><li><a href="http://www.mathworks.com/downloads/?s_cid=doc_ftr">Software Downloads</a></li></ul>
+</div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS body_trail_container-->
+<footer id="footer" class="bs-footer">
+<div class="container-fluid">
+<div class="footer">
+<div class="row">
+<div class="col-xs-12">
+<p class="copyright">&copy; 1994-2016 The MathWorks, Inc.</p>
+<ul class="footernav"><li class="footernav_help"><a href="MATLAB:web(matlab.internal.licenseAgreement)">Terms of Use</a></li><li class="footernav_patents"><a href="MATLAB:web([matlabroot '/patents.txt'])">Patents</a></li><li class="footernav_trademarks"><a href="MATLAB:web([matlabroot '/trademarks.txt'])">Trademarks</a></li><li class="footernav_piracy"><a href="MATLAB:web([docroot '/acknowledgments.html'])">Acknowledgments</a></li></ul></div>
+</div>
+</div>
+</div>
+</footer>
+</div><!--close row-offcanvas-->
+</body>
+</html>

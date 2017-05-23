@@ -1,0 +1,291 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Use Properties to Control iOS Sensor Acquisition</title>
+<link rel="stylesheet" href="docstyle.css" type="text/css"><link href="../includes/product/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="toctype" itemprop="pagetype" content="ug">
+<meta name="infotype" itemprop="infotype" content="ex" />
+
+<meta name="description" itemprop="description" content="You can use properties to display current sensor values, enable and disable sensors from MATLAB, turn logging on and off, set sample rate, and show connection and logging status." />
+<script type="text/javascript" src="../includes/product/scripts/jquery/jquery-latest.js"></script>
+<link href="../includes/product/css/site6.css?201609091557" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/site6_lg.css?201609091557" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link href="../includes/product/css/site6_md.css?201609091557" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link href="../includes/product/css/site6_sm+xs.css?201609091557" rel="stylesheet" media="screen and (max-width: 991px)">
+<link href="../includes/product/css/site6_sm.css?201609091557" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link href="../includes/product/css/site6_xs.css?201609091557" rel="stylesheet" media="screen and (max-width: 767px)">
+<link href="../includes/product/css/site6_offcanvas.css?201609091557" rel="stylesheet" type="text/css">
+
+<script src="../includes/shared/scripts/l10n.js"></script>
+<script src="../includes/shared/scripts/docscripts.js"></script>
+<script src="../includes/shared/scripts/f1help.js"></script>
+<script src="../includes/product/scripts/docscripts.js"></script>
+<script src="../includes/shared/scripts/mw.imageanimation.js"></script>
+<script src="../includes/shared/scripts/jquery.highlight.js"></script>
+<script src="../includes/product/scripts/underscore-min.js"></script>
+<script src="../includes/product/scripts/examples.js"></script>
+<script src="../includes/product/scripts/suggest.js"></script>
+
+
+
+
+
+<script src="../includes/product/scripts/jquery/jquery.mobile.custom.min.js"></script>
+<script src="../includes/product/scripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="../includes/product/scripts/global.js"></script>
+<link href="../includes/product/css/doc_center.css" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/doc_center_installed.css" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/doc_center_print.css" rel="stylesheet" type="text/css" media="print">
+<script type="text/javascript" src="../includes/shared/equationrenderer/release/MathRenderer.js"></script>
+</head>
+<body id="responsive_offcanvas">
+<div id="doc_header_spacer" class="header"></div>
+<div class="sticky_header_container includes_subnav">
+<div class="section_header level_3">
+<div class="container-fluid">
+<div class="row" id="mobile_search_row">
+<div class="col-xs-12 col-sm-6 col-sm-push-6 col-md-5 col-md-push-7" id="mobile_search">
+<div class="search_nested_content_container">
+<form id="docsearch_form" name="docsearch_form" method="get" data-release="R2016b" data-language="en" action="../../../templates/searchresults.html">
+<div class="input-group tokenized_search_field">
+<label class="sr-only">Search Help</label>
+<input type="text" class="form-control conjoined_search" autocomplete="off" name="qdoc" placeholder="Search Help" id="docsearch">
+<div class="input-group-btn">
+<button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button>
+</div>
+</div>
+</form>
+</div>
+<button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div>
+<div class="col-sm-6 col-sm-pull-6 col-md-7 col-md-pull-5" id="section_header_title">
+<div class="section_header_content">
+<div class="section_header_title">
+<h1><a href="../../../documentation-center.html">Documentation</a></h1>
+</div>
+</div>
+</div>
+<div class="visible-xs" id="search_actuator">
+<button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button>
+</div>
+</div><!--END.CLASS row-->
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS section_header level_3-->
+<div class="horizontal_nav">
+<div class="horizontal_nav_container">
+<div class="offcanvas_actuator" data-toggle="offcanvas" data-target="#sidebar" id="nav_toggle">
+<button type="button" class="btn"><span class="sr-only">Toggle navigation</span><span class="icon-menu icon_24"></span></button>
+<span class="offcanvas_actuator_label"></span><span class="offcanvas_actuator_close"></span>
+</div>
+<div class="offcanvas_horizontal_nav">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12 hidden-xs hidden-sm"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS sticky_header_container-->
+<div class="row-offcanvas row-offcanvas-left">
+<div class="sidebar-offcanvas" id="sidebar" role="navigation">
+<nav class="offcanvas_nav" role="navigation">
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_breadcrumb">
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../../../documentation-center.html" itemprop="url"><span itemprop="title">Documentation Home</span></a></li>
+</ul>
+
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_disambiguation">
+<li class="product"><a href="../index.html">MATLAB Support Package for Apple iOS Sensors</a>
+<div class="dropdown">
+<span class="icon-arrow-down icon_16" id="dropdownMenu1" data-toggle="dropdown"></span>
+<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../examples.html?s_cid=doc_flyout">Examples</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../functionlist.html?s_cid=doc_flyout">Functions</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../release-notes.html?s_cid=doc_flyout">Release Notes</a></li>
+</ul>
+</div>
+</li>
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../apple-ios-sensors-data-acquisition.html" itemprop="url"><span itemprop="title">Apple iOS Sensors Data Acquisition</span></a></li>
+</ul>
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_scrollspy nav">
+<li class="nav_scrollspy_function"><a href="#responsive_offcanvas">Use Properties to Control iOS Sensor Acquisition</a></li>
+</ul>
+</nav>
+<script src="../includes/product/scripts/offcanvas.js"></script></div><!--END.CLASS sidebar-offcanvas-->
+<div class="content_container" id="content_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+
+<section id="doc_center_content" lang="en"><div id="pgtype-topic">
+<span id="buy0mu0" class="anchor_target"></span><h2 class="title r2016b" itemprop="title content" id="buy0mu0">Use Properties to Control iOS Sensor Acquisition</h2><div class="clearfix"></div><div itemprop="content"><p>The <span>MATLAB<sup>&#x00AE;</sup> Support Package for Apple iOS Sensors</span> includes properties that
+display current sensor values, enable and disable sensors from MATLAB,
+turn logging on and off, set sample rate, and show connection and
+logging status.</p></div><div class="clearfix"></div><div itemprop="content"><p>You can use the following properties with the <code>mobiledev</code> object.</p></div><div class="clearfix"></div><div itemprop="content"><div class="table-responsive"><table cellspacing="0" class="table" cellpadding="4" border="2"><colgroup><col width="36%"><col width="64%"></colgroup><thead><tr valign="top"><th valign="top">Property</th><th valign="top">Description
+and Values</th></tr>
+</thead><tbody><tr valign="top"><td><code>Connected</code></td><td><p>Show the status of the connection between <span>MATLAB Mobile&#x2122;</span> and
+the <code>mobiledev</code> object in MATLAB. Read-only. Possible
+values are <code>0</code> for not connected and <code>1</code> for
+connected. To display the status of connection for a <code>mobiledev</code> object <code>m</code>:</p><p></p><p><code>m.Connected</code></p></td></tr>
+<tr valign="top"><td><code>Logging</code></td><td><p>Show and control the status of data transfer from the
+device to MATLAB. Possible values are <code>0</code> for not
+logging and <code>1</code> for logging . To display the status
+of logging for a <code>mobiledev</code> object <code>m</code>:</p><p></p><p><code>m.Logging</code></p><p>To
+turn logging on or off:</p><p><code>m.Logging = 1</code> or <code>m.Logging
+= 0</code> </p></td></tr>
+<tr valign="top"><td><code>InitialTimestamp</code></td><td><p>Time in milliseconds, in <code>dd-mm-yyyy HH:MM:SS.FFF</code> format,
+when the first data point was transferred from the device to the <code>mobiledev</code> object.
+To display the initial timestamp for a <code>mobiledev</code> object <code>m</code>:</p><p><code>m.InitialTimestamp</code></p></td></tr>
+<tr valign="top"><td><code>SampleRate</code></td><td>Sample rate of the acquisition from your device, in Hz. The
+value is a double and must be in the range of 0 to 100 Hz. The default
+sample rate is 10 Hz. In addition to setting a specific numeric value,
+you can also use the character vector values <code>'high'</code>, <code>'medium'</code>,
+and <code>'low'</code>, which have the following values:<p></p><p><code>high</code> 100
+Hz</p><p><code>medium</code> 10 Hz</p><p><code>low</code> 1
+Hz</p></td></tr>
+<tr valign="top"><td><code>Acceleration</code></td><td>Current acceleration reading in <code>X</code>, <code>Y</code>,
+and <code>Z</code> coordinates, in m/s^2 (meters per second
+squared).<p>Acceleration is defined in relation to the <code>X</code>, <code>Y</code> and <code>Z</code> axes.
+If you place the device face-up on a table, the positive X-axis extends
+out of the right side of the device, positive Y-axis extends out of
+the top side, and the positive Z-axis extends out of the front face
+of the device. This is independent of the orientation of the device.</p></td></tr>
+<tr valign="top"><td><code>AngularVelocity</code></td><td>Current angular velocity reading in <code>X</code>, <code>Y</code>,
+and <code>Z</code> rotations, in radians per second.<p>Angular
+Velocity is defined in relation to the <code>X</code>, <code>Y</code> and <code>Z</code> axes
+and in standard right-hand rotational vector notation. If you place
+the device face-up on a table, the positive X-axis extends out of
+the right side of the device, positive Y-axis extends out of the top
+side, and the positive Z-axis extends out of the front face of the
+device. This is independent of the orientation of the device.</p></td></tr>
+<tr valign="top"><td><code>Orientation</code></td><td>Current orientation reading in <code>X</code>, <code>Y</code>,
+and <code>Z</code> coordinates, in degrees, for azimuth, pitch,
+and roll. <p>Orientation is defined in relation to the <code>X</code>, <code>Y</code> and <code>Z</code> axes.
+If you place the device face-up on a table, the positive X-axis extends
+out of the right side of the device, positive Y-axis extends out of
+the top side, and the positive Z-axis extends out of the front face
+of the device. This is independent of the orientation of the device.</p><p>Azimuth
+is the angle between the positive Y-axis and magnetic north, and its
+range is between -180 and 180 degrees.</p><p>Positive Roll is
+defined when the device is lying flat on a surface and the positive
+Z-axis tilts towards the positive X-axis, and its range is between
+-180 and 180 degrees.</p><p>Positive Pitch is defined when the
+device is lying flat on a surface and the positive Z-axis tilts towards
+the positive Y-axis, and its range is between -90 and 90 degrees.</p></td></tr>
+<tr valign="top"><td><code>MagneticField</code></td><td>Current magnetic field reading in <code>X</code>, <code>Y</code>,
+and <code>Z</code> coordinates, in microtesla.<p>Magnetic
+field is defined in relation to the <code>X</code>, <code>Y</code> and <code>Z</code> axes.
+If you place the device face-up on a table, the positive X-axis extends
+out of the right side of the device, positive Y-axis extends out of
+the top side, and the positive Z-axis extends out of the front face
+of the device. This is independent of the orientation of the device.</p></td></tr>
+<tr valign="top"><td><code>Latitude</code></td><td><p>Current latitude reading, in degrees relative to the
+equator, with positive values indicating latitudes north of the equator.</p></td></tr>
+<tr valign="top"><td><code>Longitude</code></td><td><p>Current longitude reading, in degrees relative to the
+zero meridian, with positive values extending east of the meridian.</p></td></tr>
+<tr valign="top"><td><code>HorizontalAccuracy</code></td><td><p>Current horizontal accuracy, in meters defined by a circle
+around the latitude and longitude.</p></td></tr>
+<tr valign="top"><td><code>Altitude</code></td><td><p>Current altitude reading, in meters above sea level.</p></td></tr>
+<tr valign="top"><td><code>Course</code></td><td><p>Current course reading, in degrees relative to true north.</p></td></tr>
+<tr valign="top"><td><code>Speed</code></td><td><p>Current speed reading, in meters per second.</p></td></tr>
+<tr valign="top"><td><code>AccelerationSensorEnabled</code></td><td><p>Turn Acceleration sensor on or off.</p><p>To turn
+sensor on or off:</p><p><code>m.AccelerationSensorEnabled
+= 1 </code></p><p><code>m.AccelerationSensorEnabled =
+0</code></p></td></tr>
+<tr valign="top"><td><code>AngularVelocitySensorEnabled</code></td><td>Turn Angular Velocity sensor on or off.<p>To turn sensor
+on or off:</p><p><code>m.AngularVelocitySensorEnabled = 1 </code></p><p><code>m.AngularVelocitySensorEnabled
+= 0</code></p></td></tr>
+<tr valign="top"><td><code>MagneticSensorEnabled</code></td><td>Turn Magnetic Field sensor on or off.<p>To turn sensor on
+or off:</p><p><code>m.MagneticSensorEnabled = 1 </code></p><p><code>m.MagneticSensorEnabled
+= 0</code></p></td></tr>
+<tr valign="top"><td><code>OrientationSensorEnabled</code></td><td>Turn Orientation sensor on or off.<p>To turn sensor on or
+off:</p><p><code>m.OrientationSensorEnabled = 1</code> </p><p><code>m.OrientationSensorEnabled
+= 0</code></p></td></tr>
+<tr valign="top"><td><code>PositionSensorEnabled</code></td><td>Turn Position sensor on or off.<p>To turn sensor on or off:</p><p><code>m.PositionSensorEnabled
+= 1</code> </p><p><code>m.PositionSensorEnabled = 0</code></p></td></tr>
+</tbody></table></div><p></p></div><div class="clearfix"></div><div itemprop="content"><p><b>Object Properties</b></p></div><div class="clearfix"></div><div itemprop="content"><p>The <code>Connected</code> property is read-only and shows
+the status of the connection between <span>MATLAB Mobile</span> and the <code>mobiledev</code> object
+in MATLAB. Possible values are <code>0</code> for not connected
+and <code>1</code> for connected.</p></div><div class="clearfix"></div><div itemprop="content"><p>To display the status of the connection, for a <code>mobiledev</code> object <code>m</code>:</p></div><div class="clearfix"></div><div itemprop="content"><div class="code_responsive"><pre class="programlisting">m.Connected</pre></div></div><div class="clearfix"></div><div itemprop="content"><p>The <code>Logging</code> property shows the status of
+data transfer from the device to MATLAB. Possible values are <code>0</code> for
+not logging and <code>1</code> for logging.</p></div><div class="clearfix"></div><div itemprop="content"><p>To display the status of logging, for a <code>mobiledev</code> object <code>m</code>:</p></div><div class="clearfix"></div><div itemprop="content"><div class="code_responsive"><pre class="programlisting">m.Logging</pre></div></div><div class="clearfix"></div><div itemprop="content"><p>The <code>Logging</code> property is also used to enable
+and disable logging. To begin logging data from the selected sensors,
+enable the property.</p></div><div class="clearfix"></div><div itemprop="content"><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>m.Logging = 1</pre></div></div></div></div><div class="clearfix"></div><div itemprop="content"><p>This action starts the transmitting of data from all selected
+sensors. You can also start transmission by tapping the <b>Start
+Sending</b> button in <span>MATLAB Mobile</span>.</p></div><div class="clearfix"></div><div itemprop="content"><p>You stop logging data from the selected sensors by disabling
+the <code>Logging</code> property.</p></div><div class="clearfix"></div><div itemprop="content"><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>m.Logging = 0</pre></div></div></div></div><div class="clearfix"></div><div itemprop="content"><p>This action stops the transmitting of data from all selected
+sensors. You can also stop transmission by tapping the <b>Stop
+Sending</b> button in <span>MATLAB Mobile</span>.</p></div><div class="clearfix"></div><div itemprop="content"><p><b>Sensor Reading Properties</b></p></div><div class="clearfix"></div><div itemprop="content"><p>Use the sensor reading properties to display the current reading
+of the sensor. At any time you can display the current reading of
+any of the sensors that are being logged. The <code>Acceleration</code>, <code>AngularVelocity</code>, <code>Orientation</code>,
+and <code>MagneticField</code> properties display the current
+readings from their respective sensors. If the Position sensor is
+logging, you can get individual position readings using the <code>Latitude</code>, <code>Longitude</code>, <code>Speed</code>, <code>Course</code>, <code>Altitude</code>,
+and <code>HorizontalAccuracy</code> properties.</p></div><div class="clearfix"></div><div itemprop="content"><p>To get the current value from a sensor, use <code>&lt;objectname&gt;.&lt;propertyname&gt;</code>.
+For example, to get the acceleration reading, for object <code>m</code>:</p></div><div class="clearfix"></div><div itemprop="content"><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>m.Acceleration</pre></div></div></div></div><div class="clearfix"></div><div itemprop="content"><p>To get the longitude reading from the Position sensor:</p></div><div class="clearfix"></div><div itemprop="content"><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>m.Longitude</pre></div></div></div></div><div class="clearfix"></div><div itemprop="content"><p>See <a href="acquire-sensor-data.html#buy0l93">Device Orientation</a> for a diagram showing the <code>X</code>, <code>Y</code>,
+and <code>Z</code> axes relative to the device.</p></div><div class="clearfix"></div><div itemprop="content"><p><b>Sensor Control Properties</b></p></div><div class="clearfix"></div><div itemprop="content"><p>The support package has five properties to control the sensors
+from MATLAB. You can perform the same actions by selecting or deselecting
+the sensor buttons in <span>MATLAB Mobile</span>. Each control property has
+two possible values: <code>1</code> for on or enabled, and <code>0</code> for
+off or disabled.</p></div><div class="clearfix"></div><div itemprop="content"><p>For example, to turn the Acceleration sensor on:</p></div><div class="clearfix"></div><div itemprop="content"><div class="code_responsive"><pre class="programlisting">m.AccelerationSensorEnabled = 1</pre></div></div><div class="clearfix"></div><div itemprop="content"><p>To turn the Acceleration sensor off:</p></div><div class="clearfix"></div><div itemprop="content"><div class="code_responsive"><pre class="programlisting">m.AccelerationSensorEnabled = 0</pre></div></div><div class="clearfix"></div><div itemprop="content"><p><b>Sample Rate Property</b></p></div><div class="clearfix"></div><div itemprop="content"><p>This property is the sample rate of the data acquisition from
+your device, in Hz. The value is a double and must be a positive number
+in the range of 0 to 100 Hz. The default sample rate is 10 Hz.</p></div><div class="clearfix"></div><div itemprop="content"><p>In addition to setting a specific numeric value, you can also
+use the character vector values <code>'high'</code>, <code>'medium'</code>,
+and <code>'low'</code>. These settings use the following values:</p></div><div class="clearfix"></div><div itemprop="content"><ul type="disc"><li><p><code>high</code> &#8211; 100 Hz</p></li><li><p><code>medium</code> &#8211; 10 Hz</p></li><li><p><code>low</code> &#8211; 1 Hz</p></li></ul></div><div class="clearfix"></div><div itemprop="content"><p>You can change the sample rate even after you start logging
+data. For example, to change the sample rate to a specific value in
+Hz for <code>mobiledev</code> object <code>m</code>:</p></div><div class="clearfix"></div><div itemprop="content"><div class="code_responsive"><pre class="programlisting">m.SampleRate = 100</pre></div></div><div class="clearfix"></div><div itemprop="content"><p>To change the sample rate to one of the character vector values:</p></div><div class="clearfix"></div><div itemprop="content"><div class="code_responsive"><pre class="programlisting">m.SampleRate = 'low'</pre></div></div><div class="clearfix"></div><div itemprop="content"><p>Note that the versions of the support package prior to R2016a
+supported setting a sample rate using the character vector values.
+Starting in R2016a, you can use the character vector values or specify
+a numeric value.</p></div>
+</div></section>
+
+<div class="clearfix"></div>
+<div class="feedbackblock">Was this topic helpful?
+<input type="button" value="Yes" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-YES-R2016b');">
+<input type="button" value="No" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-NO-R2016b');">
+</div>
+<!--Last updated: Fri Sep  9 15:57:25 EDT 2016-->
+</div>
+</div>
+</div><!--close_0960-->
+</div><!--close_0970-->
+<div class="body_trail_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+<div class="row"><div class="col-xs-12 col-sm-3"><h5><a href="../index.html?s_cid=doc_ftr">MATLAB Support Package for Apple iOS Sensors Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="../examples.html?s_cid=doc_ftr">Examples</a></li>
+<li><a href="../functionlist.html?s_cid=doc_ftr">Functions</a></li>
+<li><a href="../release-notes.html?s_cid=doc_ftr">Release Notes</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="../../../documentation-center.html?s_cid=doc_ftr">Other Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="../../../matlab/index.html?s_cid=doc_ftr">MATLAB</a></li><li><span class="missinglink"></span></li><li><a href="../../../supportpkg/android/index.html?s_cid=doc_ftr">Simulink Support Package for Android Devices</a></li><li><a href="../../../supportpkg/usbwebcams/index.html?s_cid=doc_ftr">MATLAB Support Package for USB Webcams</a></li><li><a href="../../../supportpkg/arduinoio/index.html?s_cid=doc_ftr">MATLAB Support Package for Arduino Hardware</a></li><li><a href="../../../documentation-center.html?s_cid=doc_ftr">Documentation Home</a></li></ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="http://www.mathworks.com/support/?s_cid=doc_ftr">Support</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="http://www.mathworks.com/matlabcentral/answers/index?s_cid=doc_ftr">MATLAB Answers</a></li><li><a href="http://www.mathworks.com/support/install-matlab.html?s_cid=doc_ftr">Installation Help</a></li><li><a href="http://www.mathworks.com/support/bugreports/?s_cid=doc_ftr">Bug Reports</a></li><li><a href="http://www.mathworks.com/products/availability/?s_cid=doc_ftr">Product Requirements</a></li><li><a href="http://www.mathworks.com/downloads/?s_cid=doc_ftr">Software Downloads</a></li></ul>
+</div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS body_trail_container-->
+<footer id="footer" class="bs-footer">
+<div class="container-fluid">
+<div class="footer">
+<div class="row">
+<div class="col-xs-12">
+<p class="copyright">&copy; 1994-2016 The MathWorks, Inc.</p>
+<ul class="footernav"><li class="footernav_help"><a href="MATLAB:web(matlab.internal.licenseAgreement)">Terms of Use</a></li><li class="footernav_patents"><a href="MATLAB:web([matlabroot '/patents.txt'])">Patents</a></li><li class="footernav_trademarks"><a href="MATLAB:web([matlabroot '/trademarks.txt'])">Trademarks</a></li><li class="footernav_piracy"><a href="MATLAB:web([docroot '/acknowledgments.html'])">Acknowledgments</a></li></ul></div>
+</div>
+</div>
+</div>
+</footer>
+</div><!--close row-offcanvas-->
+</body>
+</html>

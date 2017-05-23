@@ -1,0 +1,249 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>poslog</title>
+<link rel="stylesheet" href="docstyle.css" type="text/css">
+<meta name="chunktype" content="refpage">
+<meta name="refentity" itemprop="refentity" content="function:poslog"><link href="../includes/product/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="toctype" itemprop="pagetype" content="fcn">
+<meta name="infotype" itemprop="infotype" content="ref/function" />
+
+<meta name="description" itemprop="description" content="This MATLAB function returns the logged position data for one or more of these variables, where m is the name of the mobiledev object that acquires the sensor data, and the other variables represent latitude, longitude, timestamps, speed, course, altitude, and horizontal accuracy." />
+<script type="text/javascript" src="../includes/product/scripts/jquery/jquery-latest.js"></script>
+<link href="../includes/product/css/site6.css?201609091557" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/site6_lg.css?201609091557" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link href="../includes/product/css/site6_md.css?201609091557" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link href="../includes/product/css/site6_sm+xs.css?201609091557" rel="stylesheet" media="screen and (max-width: 991px)">
+<link href="../includes/product/css/site6_sm.css?201609091557" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link href="../includes/product/css/site6_xs.css?201609091557" rel="stylesheet" media="screen and (max-width: 767px)">
+<link href="../includes/product/css/site6_offcanvas.css?201609091557" rel="stylesheet" type="text/css">
+
+<script src="../includes/shared/scripts/l10n.js"></script>
+<script src="../includes/shared/scripts/docscripts.js"></script>
+<script src="../includes/shared/scripts/f1help.js"></script>
+<script src="../includes/product/scripts/docscripts.js"></script>
+<script src="../includes/shared/scripts/mw.imageanimation.js"></script>
+<script src="../includes/shared/scripts/jquery.highlight.js"></script>
+<script src="../includes/product/scripts/underscore-min.js"></script>
+<script src="../includes/product/scripts/examples.js"></script>
+<script src="../includes/product/scripts/suggest.js"></script>
+
+
+
+
+
+<script src="../includes/product/scripts/jquery/jquery.mobile.custom.min.js"></script>
+<script src="../includes/product/scripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="../includes/product/scripts/global.js"></script>
+<link href="../includes/product/css/doc_center.css" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/doc_center_installed.css" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/doc_center_print.css" rel="stylesheet" type="text/css" media="print">
+<script type="text/javascript" src="../includes/shared/equationrenderer/release/MathRenderer.js"></script>
+</head>
+<body id="responsive_offcanvas">
+<div id="doc_header_spacer" class="header"></div>
+<div class="sticky_header_container includes_subnav">
+<div class="section_header level_3">
+<div class="container-fluid">
+<div class="row" id="mobile_search_row">
+<div class="col-xs-12 col-sm-6 col-sm-push-6 col-md-5 col-md-push-7" id="mobile_search">
+<div class="search_nested_content_container">
+<form id="docsearch_form" name="docsearch_form" method="get" data-release="R2016b" data-language="en" action="../../../templates/searchresults.html">
+<div class="input-group tokenized_search_field">
+<label class="sr-only">Search Help</label>
+<input type="text" class="form-control conjoined_search" autocomplete="off" name="qdoc" placeholder="Search Help" id="docsearch">
+<div class="input-group-btn">
+<button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button>
+</div>
+</div>
+</form>
+</div>
+<button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div>
+<div class="col-sm-6 col-sm-pull-6 col-md-7 col-md-pull-5" id="section_header_title">
+<div class="section_header_content">
+<div class="section_header_title">
+<h1><a href="../../../documentation-center.html">Documentation</a></h1>
+</div>
+</div>
+</div>
+<div class="visible-xs" id="search_actuator">
+<button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button>
+</div>
+</div><!--END.CLASS row-->
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS section_header level_3-->
+<div class="horizontal_nav">
+<div class="horizontal_nav_container">
+<div class="offcanvas_actuator" data-toggle="offcanvas" data-target="#sidebar" id="nav_toggle">
+<button type="button" class="btn"><span class="sr-only">Toggle navigation</span><span class="icon-menu icon_24"></span></button>
+<span class="offcanvas_actuator_label"></span><span class="offcanvas_actuator_close"></span>
+</div>
+<div class="offcanvas_horizontal_nav">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12 hidden-xs hidden-sm"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS sticky_header_container-->
+<div class="row-offcanvas row-offcanvas-left">
+<div class="sidebar-offcanvas" id="sidebar" role="navigation">
+<nav class="offcanvas_nav" role="navigation">
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_breadcrumb">
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../../../documentation-center.html" itemprop="url"><span itemprop="title">Documentation Home</span></a></li>
+</ul>
+
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_disambiguation">
+<li class="product"><a href="../index.html">MATLAB Support Package for Apple iOS Sensors</a>
+<div class="dropdown">
+<span class="icon-arrow-down icon_16" id="dropdownMenu1" data-toggle="dropdown"></span>
+<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../examples.html?s_cid=doc_flyout">Examples</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../functionlist.html?s_cid=doc_flyout">Functions</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="../release-notes.html?s_cid=doc_flyout">Release Notes</a></li>
+</ul>
+</div>
+</li>
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../apple-ios-sensors-data-acquisition.html" itemprop="url"><span itemprop="title">Apple iOS Sensors Data Acquisition</span></a></li>
+</ul>
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_disambiguation">
+<li><a href="../index.html">MATLAB Support Package for Apple iOS Sensors</a>
+</li>
+<li><a href="../functionlist.html" itemprop="url">Functions</a></li>
+</ul>
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_scrollspy nav">
+<li class="nav_scrollspy_function"><a href="#responsive_offcanvas">poslog</a></li>
+<li class="nav_scrollspy_title" id="SSPY810-refentry">On this page</li>
+<li><a href="#zmw57dd0e3377" class="intrnllnk">Syntax</a></li>
+<li><a href="#description" class="intrnllnk">Description</a></li>
+<li><a href="#examples" class="intrnllnk">Examples</a><ul>
+<li><a href="#buy3ukx-5" class="intrnllnk">Get Logged Position Data from Apple iOS Sensor</a></li>
+<li><a href="#zmw57dd0e3693" class="intrnllnk">Related Examples</a></li>
+</ul>
+</li><li><a href="#buy3ukx-3" class="intrnllnk">Output Arguments</a><ul>
+<li><a href="#output_argument_lat" class="intrnllnk">lat</a></li>
+<li><a href="#output_argument_lon" class="intrnllnk">lon</a></li>
+<li><a href="#output_argument_timestamp" class="intrnllnk">timestamp</a></li>
+<li><a href="#output_argument_speed" class="intrnllnk">speed</a></li>
+<li><a href="#output_argument_course" class="intrnllnk">course</a></li>
+<li><a href="#output_argument_alt" class="intrnllnk">alt</a></li>
+<li><a href="#output_argument_horizacc" class="intrnllnk">horizacc</a></li>
+</ul>
+</li><li><a href="#zmw57dd0e3675" class="intrnllnk">See Also</a></li>
+</ul>
+</nav>
+<script src="../includes/product/scripts/offcanvas.js"></script></div><!--END.CLASS sidebar-offcanvas-->
+<div class="content_container" id="content_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+
+<section id="doc_center_content" lang="en"><div id="pgtype-ref-function"><div class="function_ref"><span id="buy3ukx-1" class="anchor_target"></span><div class="clearfix"></div><div itemprop="content"><h1 class="r2016b" itemprop="title">poslog</h1><!-- SYNCHTO: _buy1wxo.html --><div class="doc_topic_desc"><div class="purpose_container"><p itemprop="purpose">Return logged position data from iOS sensor</p><div class="switch"><a href="javascript:void(0);" id="expandAllPage" data-allexpanded="true1">collapse all in page</a></div></div></div></div>
+<div class="ref_sect"><h2 id="zmw57dd0e3377">Syntax</h2><div class="syntax_signature"><div class="syntax_signature_module"><ul><li><div class="code_responsive"><code class="synopsis">[lat, lon, timestamp, speed, course, alt, horizacc]
+= poslog(m)</code></div> <span class="syntax_example"><a href="poslog.html#buy3ukx-5" class="intrnllnk">example</a></span></li></ul></div></div></div><div class="clear"></div><div class="clearfix"></div><div itemprop="content" class="ref_sect"><span id="buy3ukx-2" class="anchor_target"></span><h2 id="description">Description</h2><div class="descriptions"><div class="description_module"><div class="description_element"><p class="syntax_example"><a href="poslog.html#buy3ukx-5" class="intrnllnk">example</a></p><div class="code_responsive"><p><span itemprop="syntax"><code>[<a href="#outputarg_lat" class="intrnllnk"><code>lat</code></a>, <a href="#outputarg_lon" class="intrnllnk"><code>lon</code></a>, <a href="#outputarg_timestamp" class="intrnllnk"><code>timestamp</code></a>, <a href="#outputarg_speed" class="intrnllnk"><code>speed</code></a>, <a href="#outputarg_course" class="intrnllnk"><code>course</code></a>, <a href="#outputarg_alt" class="intrnllnk"><code>alt</code></a>, <a href="#outputarg_horizacc" class="intrnllnk"><code>horizacc</code></a>]
+= poslog(m)</code></span> returns the logged position data for one or
+more of these variables, where <code>m</code> is the name of
+the <code>mobiledev</code> object that acquires the sensor data,
+and the other variables represent latitude, longitude, timestamps,
+speed, course, altitude, and horizontal accuracy. Position data is
+obtained from GPS, Wi-Fi, or the cellular network, using whichever
+is available.</p></div></div></div></div><div class="clear"></div></div><div class="clearfix"></div><div itemprop="content" class="ref_sect"><div class="clearfix"></div><div class="examples"><h2 id="examples">Examples</h2><div class="expandableContent" id="expandableExamples"><p class="switch"><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true3">collapse all</a></p><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_buy3ukx-5"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_buy3ukx-5" data-target="#expand_panel_body_buy3ukx-5" aria-controls="expand_panel_body_buy3ukx-5" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="buy3ukx-5">Get Logged Position Data from Apple iOS Sensor<br></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-up icon_24"></span></div><div role="tabpanel" id="expand_panel_body_buy3ukx-5" aria-labelledby="expand_panel_heading_buy3ukx-5" class="panel-collapse collapse in"><div class="panel-body">
+<p>This example assumes that you have already
+installed and set up <span>MATLAB<sup>&#x00AE;</sup> Mobile&#x2122;</span> on your iOS device and connected
+it to your computer running MATLAB. For information about these
+steps, see <a href="get-started-with-apple-ios-sensors.html">Get Started with iOS Sensors</a>.</p>
+<p>Start <span>MATLAB Mobile</span> on your iOS device.</p><p>On the <b>Sensors</b> screen, tap the <b>Position</b> sensor.</p><p>Place the device where you want to get the sensor data.</p><p>On your computer, create a <code>mobiledev</code> object, <code>m</code>,
+in MATLAB.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>m = mobiledev</pre></div></div></div><p>Begin logging data by enabling the <code>Logging</code> property.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>m.Logging = 1</pre></div></div></div><p>This action starts the transmitting of data from all selected
+sensors. You can also start transmission by tapping the <b>Start
+Sending</b> button in <span>MATLAB Mobile</span>.</p><p>Get the logged position data for latitude, longitude,
+timestamps, speed, course, altitude, and horizontal accuracy.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>[lat, lon, t, speed, course, alt, horizacc] = poslog(m)</pre></div></div></div><ul><span id="zmw57dd0e3657" class="anchor_target"></span><table cellspacing="0" class="note" summary="Note" cellpadding="5" border="1"><tr width="90%"><td><p><b>Note:</b>&nbsp;&nbsp;
+
+
+Position data may not appear immediately, due to the way it
+is collected. You may see a lag in the data.</p></td></tr></table></ul><p>See <a href="acquire-sensor-data.html#buy0l93">Device Orientation</a> for a diagram showing the <code>X</code>, <code>Y</code>,
+and <code>Z</code> axes relative to the device.</p></div></div></div></div></div><h3 class="bottom_ruled" id="zmw57dd0e3693">Related Examples</h3><ul><li><a href="../../../supportpkg/iossensor/ug/acquire-sensor-data.html">Acquire Sensor Data</a></li><li><a href="../../../supportpkg/iossensor/ug/use-properties-to-control-apple-ios-sensor-acquisition.html">Use Properties to Control iOS Sensor Acquisition</a></li><li><a href="../../../supportpkg/iossensor/ug/use-logged-sensor-data.html">Use Logged Sensor Data</a></li></ul></div></div><div class="clearfix"></div><div itemprop="content" class="ref_sect"><h2 id="buy3ukx-3">Output Arguments</h2><div class="expandableContent"><p class="switch "><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true">collapse all</a></p><div class="panel-group" id="buy3ukx-3_panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_output_argument_lat" data-target="#expand_panel_body_output_argument_lat" aria-controls="expand_panel_body_output_argument_lat" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="outputarg_lat" class="anchor_target"></span><h3 class="panel-title" id="output_argument_lat"><code>lat</code> &#8212; Name of variable for latitude log data<br><span class="add_font_color_general remove_bold"><span class="example_desc">[mx1] vector</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-up icon_24"></span></div><div role="tabpanel" id="expand_panel_body_output_argument_lat" aria-labelledby="expand_panel_heading_output_argument_lat" class="panel-collapse collapse in"><div class="panel-body">
+<p>Name of variable for latitude log data, returned as an [mx1]
+vector of latitude values in degrees relative to the equator, with
+positive values indicating latitudes north of the equator.</p>
+</div></div></div><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_output_argument_lon" data-target="#expand_panel_body_output_argument_lon" aria-controls="expand_panel_body_output_argument_lon" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="outputarg_lon" class="anchor_target"></span><h3 class="panel-title" id="output_argument_lon"><code>lon</code> &#8212; Name of variable for longitude log data<br><span class="add_font_color_general remove_bold"><span class="example_desc">[mx1] vector</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-up icon_24"></span></div><div role="tabpanel" id="expand_panel_body_output_argument_lon" aria-labelledby="expand_panel_heading_output_argument_lon" class="panel-collapse collapse in"><div class="panel-body">
+<p>Name of variable for longitude log data, returned as an [mx1]
+vector of longitude values in degrees relative to the zero meridian,
+with positive values extending east of the meridian.</p>
+</div></div></div><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_output_argument_timestamp" data-target="#expand_panel_body_output_argument_timestamp" aria-controls="expand_panel_body_output_argument_timestamp" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="outputarg_timestamp" class="anchor_target"></span><h3 class="panel-title" id="output_argument_timestamp"><code>timestamp</code> &#8212; Name of variable for timestamp<br><span class="add_font_color_general remove_bold"><span class="example_desc">[mx1] vector</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-up icon_24"></span></div><div role="tabpanel" id="expand_panel_body_output_argument_timestamp" aria-labelledby="expand_panel_heading_output_argument_timestamp" class="panel-collapse collapse in"><div class="panel-body">
+<p>Name of variable for timestamp, returned as an [mx1] vector
+of timestamps from the Position sensor on the iOS device. Time is
+in seconds, relative to the <code>InitialTimestamp</code> property.</p>
+</div></div></div><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_output_argument_speed" data-target="#expand_panel_body_output_argument_speed" aria-controls="expand_panel_body_output_argument_speed" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="outputarg_speed" class="anchor_target"></span><h3 class="panel-title" id="output_argument_speed"><code>speed</code> &#8212; Name of variable for speed log data<br><span class="add_font_color_general remove_bold"><span class="example_desc">[mx1] vector</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-up icon_24"></span></div><div role="tabpanel" id="expand_panel_body_output_argument_speed" aria-labelledby="expand_panel_heading_output_argument_speed" class="panel-collapse collapse in"><div class="panel-body">
+<p>Name of variable for speed log data, returned as an [mx1] vector
+of speed values in meters per second.</p>
+</div></div></div><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_output_argument_course" data-target="#expand_panel_body_output_argument_course" aria-controls="expand_panel_body_output_argument_course" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="outputarg_course" class="anchor_target"></span><h3 class="panel-title" id="output_argument_course"><code>course</code> &#8212; Name of variable for course log data<br><span class="add_font_color_general remove_bold"><span class="example_desc">[mx1] vector</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-up icon_24"></span></div><div role="tabpanel" id="expand_panel_body_output_argument_course" aria-labelledby="expand_panel_heading_output_argument_course" class="panel-collapse collapse in"><div class="panel-body">
+<p>Name of variable for course log data returned as an [mx1] vector
+of course values in degrees relative to true north.</p>
+</div></div></div><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_output_argument_alt" data-target="#expand_panel_body_output_argument_alt" aria-controls="expand_panel_body_output_argument_alt" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="outputarg_alt" class="anchor_target"></span><h3 class="panel-title" id="output_argument_alt"><code>alt</code> &#8212; Name of variable for altitude log data<br><span class="add_font_color_general remove_bold"><span class="example_desc">[mx1] vector</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-up icon_24"></span></div><div role="tabpanel" id="expand_panel_body_output_argument_alt" aria-labelledby="expand_panel_heading_output_argument_alt" class="panel-collapse collapse in"><div class="panel-body">
+<p>Name of variable for altitude log data, returned as an [mx1]
+vector of altitude values in meters above sea level.</p>
+</div></div></div><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_output_argument_horizacc" data-target="#expand_panel_body_output_argument_horizacc" aria-controls="expand_panel_body_output_argument_horizacc" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="outputarg_horizacc" class="anchor_target"></span><h3 class="panel-title" id="output_argument_horizacc"><code>horizacc</code> &#8212; Name of variable for horizontal accuracy log data<br><span class="add_font_color_general remove_bold"><span class="example_desc">[mx1] vector</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-up icon_24"></span></div><div role="tabpanel" id="expand_panel_body_output_argument_horizacc" aria-labelledby="expand_panel_heading_output_argument_horizacc" class="panel-collapse collapse in"><div class="panel-body">
+<p>Name of variable for horizontal accuracy log data, returned
+as an [mx1] vector of radial horizontal accuracy values in meters
+defined by a circle around the latitude and longitude.</p>
+</div></div></div></div></div></div><div class="clearfix"></div><div class="ref_sect">
+<h2 id="zmw57dd0e3675">See Also</h2><p><span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="accellog.html"><span itemprop="name"><code>accellog</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="angvellog.html"><span itemprop="name"><code>angvellog</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="discardlogs.html"><span itemprop="name"><code>discardlogs</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="disp.html"><span itemprop="name"><code>disp</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="magfieldlog.html"><span itemprop="name"><code>magfieldlog</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="mobiledev.html"><span itemprop="name"><code>mobiledev</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="orientlog.html"><span itemprop="name"><code>orientlog</code></span></a></span></p>
+
+
+
+</div>
+</div></div></section>
+
+<div class="clearfix"></div>
+<div class="feedbackblock">Was this topic helpful?
+<input type="button" value="Yes" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-YES-R2016b');">
+<input type="button" value="No" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-NO-R2016b');">
+</div>
+<!--Last updated: Fri Sep  9 15:57:25 EDT 2016-->
+</div>
+</div>
+</div><!--close_0960-->
+</div><!--close_0970-->
+<div class="body_trail_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+<div class="row"><div class="col-xs-12 col-sm-3"><h5><a href="../index.html?s_cid=doc_ftr">MATLAB Support Package for Apple iOS Sensors Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="../examples.html?s_cid=doc_ftr">Examples</a></li>
+<li><a href="../functionlist.html?s_cid=doc_ftr">Functions</a></li>
+<li><a href="../release-notes.html?s_cid=doc_ftr">Release Notes</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="../../../documentation-center.html?s_cid=doc_ftr">Other Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="../../../matlab/index.html?s_cid=doc_ftr">MATLAB</a></li><li><span class="missinglink"></span></li><li><a href="../../../supportpkg/android/index.html?s_cid=doc_ftr">Simulink Support Package for Android Devices</a></li><li><a href="../../../supportpkg/usbwebcams/index.html?s_cid=doc_ftr">MATLAB Support Package for USB Webcams</a></li><li><a href="../../../supportpkg/arduinoio/index.html?s_cid=doc_ftr">MATLAB Support Package for Arduino Hardware</a></li><li><a href="../../../documentation-center.html?s_cid=doc_ftr">Documentation Home</a></li></ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="http://www.mathworks.com/support/?s_cid=doc_ftr">Support</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="http://www.mathworks.com/matlabcentral/answers/index?s_cid=doc_ftr">MATLAB Answers</a></li><li><a href="http://www.mathworks.com/support/install-matlab.html?s_cid=doc_ftr">Installation Help</a></li><li><a href="http://www.mathworks.com/support/bugreports/?s_cid=doc_ftr">Bug Reports</a></li><li><a href="http://www.mathworks.com/products/availability/?s_cid=doc_ftr">Product Requirements</a></li><li><a href="http://www.mathworks.com/downloads/?s_cid=doc_ftr">Software Downloads</a></li></ul>
+</div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS body_trail_container-->
+<footer id="footer" class="bs-footer">
+<div class="container-fluid">
+<div class="footer">
+<div class="row">
+<div class="col-xs-12">
+<p class="copyright">&copy; 1994-2016 The MathWorks, Inc.</p>
+<ul class="footernav"><li class="footernav_help"><a href="MATLAB:web(matlab.internal.licenseAgreement)">Terms of Use</a></li><li class="footernav_patents"><a href="MATLAB:web([matlabroot '/patents.txt'])">Patents</a></li><li class="footernav_trademarks"><a href="MATLAB:web([matlabroot '/trademarks.txt'])">Trademarks</a></li><li class="footernav_piracy"><a href="MATLAB:web([docroot '/acknowledgments.html'])">Acknowledgments</a></li></ul></div>
+</div>
+</div>
+</div>
+</footer>
+</div><!--close row-offcanvas-->
+</body>
+</html>

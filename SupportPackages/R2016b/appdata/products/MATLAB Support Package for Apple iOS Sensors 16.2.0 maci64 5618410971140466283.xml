@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<productAdditionalComps>
+  <dependsOn>
+    <component>
+      <name>hardwaresupportpkgs/matlab/sharedmobilesensor_maci64</name>
+      <instrset>0</instrset>
+      <locale />
+      <platformList>
+        <platform>maci64</platform>
+      </platformList>
+      <version>1469254191</version>
+    </component>
+  </dependsOn>
+  <isControllingProduct>false</isControllingProduct>
+  <licenseAgreementType>ASLA</licenseAgreementType>
+  <platform>maci64</platform>
+  <productBaseCode>ML_APPLE_IOS_SENSORS</productBaseCode>
+  <productName>MATLAB Support Package for Apple iOS Sensors</productName>
+  <productNumber>2131</productNumber>
+  <productVersion>16.2.0</productVersion>
+  <releaseDescription>R2016b</releaseDescription>
+  <releaseFamily>R2016b</releaseFamily>
+</productAdditionalComps>
+

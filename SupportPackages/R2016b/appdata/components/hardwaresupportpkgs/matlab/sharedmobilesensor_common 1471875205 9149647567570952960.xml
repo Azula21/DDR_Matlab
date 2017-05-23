@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<componentData>
+  <component>
+    <componentBaseName>hardwaresupportpkgs/matlab/sharedmobilesensor</componentBaseName>
+    <componentFileName>hardwaresupportpkgs/matlab/sharedmobilesensor_common_1471875205.zip</componentFileName>
+    <componentName>hardwaresupportpkgs/matlab/sharedmobilesensor_common</componentName>
+    <componentVersion>1471875205</componentVersion>
+    <instrset>0</instrset>
+    <locale />
+    <locationId>1</locationId>
+    <numFiles>7</numFiles>
+    <platformList>
+      <platform>glnxa64</platform>
+      <platform>maci64</platform>
+      <platform>win64</platform>
+    </platformList>
+    <releaseFamily>R2016b</releaseFamily>
+    <size>15816</size>
+    <type />
+    <uncompressedBytes>42915</uncompressedBytes>
+  </component>
+</componentData>
+
